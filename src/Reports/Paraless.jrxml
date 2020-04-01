@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Paraless" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a716240c-704b-4b6e-b714-3203d000b395">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+     student."sid" AS student_sid,
+     student."fname" AS student_fname,
+     student."mname" AS student_mname,
+     student."lname" AS student_lname,
+     student."DOB" AS student_DOB,
+     student."phone_num" AS student_phone_num,
+     student."code" AS student_code,
+     student."Course" AS student_Course,
+     student."Email" AS student_Email,
+ student."UserName" AS student_UserName
+FROM
+     "dbo"."student" student]]>
+	</queryString>
+	<field name="student_sid" class="java.lang.Integer"/>
+	<field name="student_fname" class="java.lang.String"/>
+	<field name="student_mname" class="java.lang.String"/>
+	<field name="student_lname" class="java.lang.String"/>
+	<field name="student_DOB" class="java.lang.String"/>
+	<field name="student_phone_num" class="java.lang.Integer"/>
+	<field name="student_code" class="java.lang.String"/>
+	<field name="student_Course" class="java.lang.String"/>
+	<field name="student_Email" class="java.lang.String"/>
+	<field name="student_UserName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="224" y="27" width="330" height="62" forecolor="#999999" uuid="4dc3a04d-dbcb-4d2f-a79c-1b8eaf6ffbd1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="36" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Student Details]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="27" width="188" height="83" uuid="934e5f16-f54b-4adc-b77e-a3fe98e26425"/>
+				<imageExpression><![CDATA["C:\\Users\\Home-PC\\Documents\\StudentRegSystem\\src\\Reports\\esoft-logo.jpg"]]></imageExpression>
+			</image>
+			<image hAlign="Center">
+				<reportElement x="579" y="27" width="222" height="83" uuid="328a9b7b-8246-4621-a00b-1188c3df420e"/>
+				<imageExpression><![CDATA["C:\\Users\\Home-PC\\Documents\\StudentRegSystem\\src\\Reports\\we.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="f466be98-34a6-4cc7-be54-1eef87e4cbea"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="71" y="0" width="107" height="15" forecolor="#736343" uuid="9da6f548-2ab8-4ad9-b49c-2237a46934bd"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Fist Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="178" y="0" width="89" height="15" forecolor="#736343" uuid="c6fa1128-e0fc-4092-9c1b-ccc559a640b5"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Middle Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="267" y="0" width="89" height="15" forecolor="#736343" uuid="7fc9b6a3-2b02-4cfc-b4b3-309b662adf07"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="356" y="0" width="89" height="15" forecolor="#736343" uuid="a05d1ee1-df09-40cc-97d9-fd5e3e21a903"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="445" y="0" width="89" height="15" forecolor="#736343" uuid="485f33b6-e5f8-4e05-97f3-3f9e544e1daf"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Phone Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="534" y="0" width="71" height="15" forecolor="#736343" uuid="630ab350-5749-46a2-bfe3-7242aa689e99"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Corse Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="605" y="1" width="89" height="15" forecolor="#736343" uuid="891b0b33-8c4a-4f3d-9ba4-1a7468ddeccf"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Course Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="694" y="0" width="107" height="15" forecolor="#736343" uuid="7d3054f5-5617-4ccd-9c12-fb7fd94f183b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="1" y="0" width="70" height="15" forecolor="#736343" uuid="645a4a71-042b-4f30-a002-66ea147d79ee"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Student Id]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="e2c945c0-ddc5-42ea-a5d7-ad99250306b7"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="71" y="0" width="107" height="15" uuid="afd0b26a-2a8c-4465-8465-cfd13ad6bd5f"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{student_fname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="178" y="0" width="89" height="15" uuid="3f66804f-fa99-46ca-ac48-863292e89add"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{student_mname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="267" y="0" width="89" height="15" uuid="74c5002e-e3bf-4279-b518-3e6bd09a7f1b"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{student_lname}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="356" y="0" width="89" height="15" uuid="1ecb1160-9108-47d8-9b12-763a498adcab"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{student_DOB}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="445" y="0" width="89" height="15" uuid="dda9de19-3e6e-4b7c-b855-a89549d2d05b"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{student_phone_num}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="534" y="0" width="71" height="15" uuid="be98dda5-ed7b-4e95-8722-2fac1d22b94d"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{student_code}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="605" y="0" width="89" height="15" uuid="3dfd0ef7-e539-4210-9c89-6bc87048f089"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{student_Course}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="694" y="0" width="108" height="15" uuid="7f293ab5-55b4-4c97-aae8-a140e87cddab"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{student_Email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="71" height="15" uuid="e110732c-2bac-4340-bde1-ff9ba35432ab"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{student_sid}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="78ace07b-69a2-47cd-9a47-0324dd34bd1a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="3099036b-e8ff-4b1f-91d7-6c9ece337fe2"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="6bf001d9-dbaa-48e9-86ce-a1fcffecd35b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="9fc0f0f0-67d5-455d-831c-a4a92291f187"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="dd20970b-0841-447f-9bd4-7c40619759d5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="366" y="1" width="169" height="20" uuid="528eca6b-ad23-4ed7-b1a4-21e2173107df"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Development By Milinda Kaushika]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
